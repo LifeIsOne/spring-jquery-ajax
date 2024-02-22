@@ -14,7 +14,7 @@
                 <div class="mb-3">
                     <textarea class="form-control" rows="5" id="content"></textarea>
                 </div>
-                <button onclick="write()" class="btn btn-primary form-control">글쓰기완료</button>
+                <button type="button" onclick="bthWrite()" class="btn btn-primary form-control">글쓰기완료</button>
             </form>
         </div>
     </div>
@@ -29,15 +29,15 @@
             content : $("#content").val(),
             author  : $("#author").val()
         };
-        console.log(board);
-
-        let boardJson = JSON.stringify(board);
-        console.log(boardJson);
+        // console.log(board);
+        //
+        // let boardJson = JSON.stringify(board);
+        // console.log(boardJson);
 
         $.ajax({
-            url: "/api/boards",
-            type: "post",
-            data: JSON.stringify(board),
+            url     : "/api/boards",
+            type    : "post",
+            data    : JSON.stringify(board),
             contentType: "application/json; charset=utf-8"
         }).done((res)=>{
             location.href = "/";
