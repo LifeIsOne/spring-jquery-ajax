@@ -3,7 +3,6 @@ package shop.mtcoding.blog.board;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-@AllArgsConstructor
 @Data
 public class ApiUtil<T> {
     private Integer status; // 200, 400
